@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ব্রাদারস কম্পিউটার ট্রেনিং সেন্টার - রেজিস্ট্রেশন ফর্ম</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      background: linear-gradient(135deg, #f6f9fc, #e3f2fd);
+      margin: 0; padding: 0; color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 30px 45px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .header {
+      text-align: center;
+      margin: -30px -45px 25px -45px;
+      padding: 30px 20px;
+      background: linear-gradient(to right, #00b4d8, #0077b6, #023e8a);
+      color: #fff;
+    }
+    .header img {
+      width: 120px; height: auto; margin-bottom: 10px;
+      border-radius: 50%; border: 3px solid #fff;
+    }
+    .header h1 { margin: 0; font-size: 2em; }
+    .header h2 { margin: 5px 0 0; font-size: 1.3em; font-weight: 400; }
+    fieldset {
+      margin-bottom: 20px; border: 2px solid #90e0ef;
+      padding: 18px; border-radius: 12px; background: #f8fbff;
+    }
+    legend { font-weight: bold; color: #0077b6; padding: 0 8px; }
+    label { display: block; margin-top: 12px; font-weight: 500; }
+    input, select, textarea {
+      width: 95%; padding: 10px; margin-top: 6px;
+      border: 1px solid #ccc; border-radius: 8px; outline: none;
+      transition: all 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #0077b6;
+      box-shadow: 0 0 8px rgba(0,119,182,0.3);
+    }
+    .options { display: flex; gap: 20px; margin-top: 10px; flex-wrap: wrap; }
+    .options input { width: auto; margin-right: 6px; accent-color: #0077b6; transform: scale(1.2); }
+    .options label { font-weight: normal; }
+    .btns { text-align: center; margin-top: 25px; }
+    button {
+      padding: 12px 28px; border: none; border-radius: 50px;
+      cursor: pointer; margin: 0 10px; font-size: 1em; font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-submit { background: linear-gradient(to right, #00b4d8, #0077b6); color: #fff; }
+    .btn-submit:hover { background: linear-gradient(to right, #0077b6, #023e8a); transform: scale(1.05); }
+    .btn-reset { background: linear-gradient(to right, #ef476f, #d90429); color: #fff; }
+    .btn-reset:hover { background: linear-gradient(to right, #d90429, #6a040f); transform: scale(1.05); }
+    .note { margin-top: 30px; font-size: 0.95em; color: #333; border-left: 5px solid #0077b6; padding: 12px; background: #e0f7fa; border-radius: 8px; }
+    .developer { text-align: center; margin-top: 25px; font-weight: bold; color: #03045e; font-size: 1.1em; }
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #0077b6;
+    }
+    th, td {
+      padding: 10px; text-align: center;
+    }
+    th {
+      background: #0077b6; color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.postimg.cc/ncHTJKN2/Blue-Minimalist-Illustration-Computer-Logo-1.png" alt="Logo">
+      <h1>ব্রাদারস কম্পিউটার ট্রেনিং সেন্টার</h1>
+      <h2>®️ ভর্তি / রেজিস্ট্রেশন ফর্ম</h2>
+    </div>
+
+    <form id="regForm">
+      <!-- ব্যক্তিগত তথ্য -->
+      <fieldset>
+        <legend>ব্যক্তিগত তথ্য</legend>
+        <label>পূর্ণ নাম: <input type="text" name="name" required></label>
+        <label>পিতার নাম: <input type="text" name="father"></label>
+        <label>মাতার নাম: <input type="text" name="mother"></label>
+        <label>অভিভাবকের নাম (যদি আলাদা হয়): <input type="text" name="guardian"></label>
+        <label>ঠিকানা: <textarea name="address"></textarea></label>
+        <label>জেলা: <input type="text" name="district"></label>
+        <label>উপজেলা: <input type="text" name="upazila"></label>
+        <label>পোস্ট অফিস: <input type="text" name="postoffice"></label>
+        <label>পোস্ট কোড: <input type="text" name="postcode"></label>
+      
+      </fieldset>
+
+      <!-- শিক্ষাগত তথ্য -->
+      <fieldset>
+        <legend>শিক্ষাগত তথ্য</legend>
+        <label>সর্বোচ্চ শিক্ষাগত যোগ্যতা: <input type="text" name="education"></label>
+        <label>SSC / সমমান বছর ও GPA: <input type="text" name="ssc"></label>
+        <label>HSC / সমমান বছর ও GPA: <input type="text" name="hsc"></label>
+        <label>Diploma / Bachelor / অন্য কিছু: <input type="text" name="others"></label>
+        <label>বর্তমানে অধ্যয়নরত: <input type="text" name="current"></label>
+      </fieldset>
+
+      <!-- ব্যক্তিগত পরিচিতি -->
+      <fieldset>
+        <legend>ব্যক্তিগত পরিচিতি</legend>
+        <div class="options">
+          <label><input type="radio" name="gender" value="পুরুষ"> পুরুষ</label>
+          <label><input type="radio" name="gender" value="নারী"> নারী</label>
+          <label><input type="radio" name="gender" value="অন্যান্য"> অন্যান্য</label>
+        </div>
+        <div class="options">
+          <label><input type="radio" name="status" value="বিবাহিত"> বিবাহিত</label>
+          <label><input type="radio" name="status" value="অবিবাহিত"> অবিবাহিত</label>
+        </div>
+        <label>জন্ম তারিখ: <input type="date" name="dob"></label>
+        <label>রক্তের গ্রুপ: <input type="text" name="blood"></label>
+      </fieldset>
+
+      <!-- যোগাযোগ -->
+      <fieldset>
+        <legend>যোগাযোগ</legend>
+        <label>ফোন নাম্বার: <input type="tel" name="phone" required></label>
+        <label>ই-মেইল: <input type="email" name="email"></label>
+        <label>এনআইডি / জন্ম নিবন্ধন নাম্বার: <input type="text" name="nid"></label>
+        <label>গার্ডিয়ানের ফোন নাম্বার: <input type="tel" name="guardianPhone"></label>
+      </fieldset>
+
+      <!-- কোর্স নির্বাচন -->
+      <fieldset>
+        <legend>কোর্স নির্বাচন</legend>
+        <div class="options">
+          <label><input type="checkbox" name="course" value="বেসিক কম্পিউটার (৩ মাস)"> বেসিক কম্পিউটার (৩ মাস)</label>
+          <label><input type="checkbox" name="course" value="অফিস এপ্লিকেশন (৬ মাস)"> অফিস এপ্লিকেশন (৬ মাস)</label>
+          <label><input type="checkbox" name="course" value="ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট (৬ মাস)"> ওয়েব ডিজাইন এন্ড ডেভেলপমেন্ট (৬ মাস)</label>
+          <label><input type="checkbox" name="course" value="গ্রাফিক্স ডিজাইন (৬ মাস)"> গ্রাফিক্স ডিজাইন (৬ মাস)</label>
+          <label><input type="checkbox" name="course" value="ফ্রিল্যান্সিং / আউটসোর্সিং (৩ মাস)"> ফ্রিল্যান্সিং / আউটসোর্সিং (৩ মাস)</label>
+        </div>
+
+        <!-- কোর্স ফি টেবিল -->
+        <h3>💰 কোর্স ফি তালিকা:</h3>
+        <table>
+          <tr>
+            <th>কোর্স সময়কাল</th>
+            <th>কোর্স ফি</th>
+            <th>ভর্তির সময় পরিশোধযোগ্য (৫০%)</th>
+            <th>অবশিষ্ট (পরবর্তীতে)</th>
+          </tr>
+          <tr>
+            <td>৩ মাস</td>
+            <td>৪,০০০ টাকা</td>
+            <td>২,০০০ টাকা</td>
+            <td>২,০০০ টাকা</td>
+          </tr>
+          <tr>
+            <td>৬ মাস</td>
+            <td>৬,০০০ টাকা</td>
+            <td>৩,০০০ টাকা</td>
+            <td>৩,০০০ টাকা</td>
+          </tr>
+          <tr>
+            <td>১ বছর</td>
+            <td>১০,০০০ টাকা</td>
+            <td>৫,০০০ টাকা</td>
+            <td>৫,০০০ টাকা</td>
+          </tr>
+        </table>
+      </fieldset>
+
+      <!-- পেমেন্ট -->
+      <fieldset>
+        <legend>পেমেন্ট তথ্য</legend>
+        <label>ভর্তি ফি (টাকা): <input type="number" name="fee"></label>
+        <label>পেমেন্ট মোড: 
+          <select name="paymentMethod">
+            <option value="">-- নির্বাচন করুন --</option>
+            <option value="বিকাশ">বিকাশ</option>
+            <option value="নগদ">নগদ</option>
+            <option value="রকেট">রকেট</option>
+            <option value="ক্যাশ">ক্যাশ</option>
+          </select>
+        </label>
+        <label>লেনদেন নাম্বার: <input type="text" name="trxid"></label>
+      </fieldset>
+
+      <!-- অফিস অংশ -->
+      <fieldset>
+        <legend>অফিস ব্যবহারযোগ্য</legend>
+        <label>রেজিস্ট্রেশন নাম্বার: <input type="text" name="regnum"></label>
+        <label>রোল নাম্বার: <input type="text" name="rollnum"></label>
+        <label>ট্রেইনারের স্বাক্ষর: <input type="text" name="trainerSign"></label>
+      </fieldset>
+
+      <div class="btns">
+        <button type="submit" class="btn-submit">সাবমিট</button>
+        <button type="reset" class="btn-reset">রিসেট</button>
+      </div>
+    </form>
+
+    <div class="note">
+      <p>📌 দ্রষ্টব্য:<br>
+      ✅ ভর্তি হওয়ার সময় অবশ্যই কোর্স ফি এর অর্ধেক (৫০%) পরিশোধ করতে হবে।<br>
+      ✅ অবশিষ্ট টাকা কোর্সের মাঝামাঝি সময়ে পরিশোধ করতে হবে।<br>
+      ✅ ভুল তথ্য দিলে ভর্তি বাতিল হবে।<br>
+      ✅ ভর্তি ফি ফেরতযোগ্য নয়।</p>
+    </div>
+
+    <div class="developer">Developer: Rofiqul Islam</div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAoS6f7n3XbWh2NUl4vghtNjJxyZzGWI5M",
+      authDomain: "brothers-computer-training.firebaseapp.com",
+      projectId: "brothers-computer-training",
+      storageBucket: "brothers-computer-training.firebasestorage.app",
+      messagingSenderId: "1022870805806",
+      appId: "1:1022870805806:web:eb83e2c4331040d2eeaebf",
+      measurementId: "G-WFPTT6T160"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const analytics = getAnalytics(app);
+
+    // ফর্ম সাবমিট হ্যান্ডলার
+    document.getElementById("regForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        await addDoc(collection(db, "registrations"), data);
+        alert("✅ রেজিস্ট্রেশন সফলভাবে সম্পন্ন হয়েছে!");
+        e.target.reset();
+      } catch (error) {
+        console.error("Error adding document: ", error);
+        alert("❌ কিছু ভুল হয়েছে, আবার চেষ্টা করুন।");
+      }
+    });
+  </script>
+</body>
+</html>
