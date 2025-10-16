@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rofiqul Islam Tanvir — Personal Portfolio</title>
+
+  <!-- Fonts & Icons & AOS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <meta name="description" content="Portfolio of Rofiqul Islam Tanvir — Computer Science student & web developer">
+  <meta name="author" content="Rofiqul Islam Tanvir">
+
+  <style>
+    :root{
+      --accent:#00d4ff;
+      --accent-dark:#00a3cc;
+      --bg:#0f1113;
+      --card:#16171a;
+      --muted:#bfc6cc;
+      --nav-h:72px;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:"Poppins",Inter, sans-serif;background:var(--bg);color:#eef2f3;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+      display:flex;align-items:center;justify-content:space-between;padding:10px 18px;
+      background:linear-gradient(180deg, rgba(15,17,19,0.9), rgba(15,17,19,0.75));
+      backdrop-filter: blur(6px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:64px;height:64px;border-radius:10px;object-fit:cover;border:3px solid var(--accent)}
+    .brand .name{font-weight:700;font-size:18px;background:linear-gradient(90deg,var(--accent),#7efcff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{color:var(--accent);padding:8px 10px;border-radius:8px;font-weight:600}
+    .nav a.active{background:linear-gradient(90deg, rgba(0,212,255,0.08), rgba(0,163,204,0.06));color:#fff}
+    .menu-btn{display:none;background:none;border:none;color:var(--accent);font-size:24px;cursor:pointer}
+
+    @media(max-width:900px){
+      .nav{display:none;position:fixed;top:var(--nav-h);right:12px;background:rgba(8,8,9,0.98);flex-direction:column;padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+      .nav.show{display:flex}
+      .menu-btn{display:block}
+    }
+
+    main{padding-top:calc(var(--nav-h) + 18px);max-width:1100px;margin:0 auto}
+
+    /* Hero */
+    .hero{min-height:420px;border-radius:var(--radius);margin:18px;padding:28px;background:linear-gradient(180deg, rgba(6,10,16,0.6), rgba(10,12,14,0.6)), url('https://picsum.photos/1400/500?blur=3') center/cover no-repeat;display:flex;gap:28px;align-items:center}
+    .hero-left{flex:1;min-width:200px}
+    .hero-right{width:220px;display:flex;justify-content:center;align-items:center}
+    .hero-right img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:6px solid var(--accent)}
+    .hero h1{font-size:28px;margin:0 0 10px;color:var(--accent)}
+    .hero p{color:var(--muted);line-height:1.6}
+    .hero .cta{margin-top:14px;display:flex;gap:10px}
+    .btn{padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#041017}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Sections */
+    section{margin:22px 0;padding:22px;background:var(--card);border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.5)}
+    section h2{color:var(--accent);margin-bottom:12px;text-align:center}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:880px){.two-col{grid-template-columns:1fr}}
+
+    /* About */
+    .about .list{display:flex;gap:12px;flex-wrap:wrap}
+    .skill-pill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
+
+    /* Education & Skills */
+    .edu-item{padding:12px;border-left:4px solid var(--accent);margin-bottom:12px;background:rgba(255,255,255,0.01);border-radius:8px}
+    .skills-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+
+    /* Courses / Training */
+    .courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .course-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+
+    /* Portfolio */
+    .portfolio-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .filter-btn{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);background:transparent;cursor:pointer;color:var(--muted)}
+    .filter-btn.active{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#041017}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .gallery .card{border-radius:10px;overflow:hidden;background:rgba(0,0,0,0.25)}
+    .gallery img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .3s}
+    .gallery .card:hover img{transform:scale(1.05)}
+    .proj-meta{padding:10px}
+
+    /* Testimonials */
+    .testi-wrap{display:flex;gap:12px;overflow:hidden;align-items:center}
+    .testi{min-width:280px;background:rgba(255,255,255,0.02);border-radius:10px;padding:12px}
+    .testi p{color:var(--muted);line-height:1.5}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    @media(max-width:1100px){.contact-grid{grid-template-columns:1fr}}
+    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:#eef2f3}
+    .contact-form button{margin-top:8px}
+
+    /* Footer */
+    .footer{margin-top:18px;padding:12px;text-align:center;color:rgba(255,255,255,0.5)}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="brand" aria-label="Brand">
+      <img src="https://i.postimg.cc/gkHjP2RF/20251015-195601.png" alt="Logo of R.T">
+      <div>
+        <div class="name">𝙍𝙊𝙁𝙄𝙌𝙐𝙇 𝙄𝙎𝙇𝘼𝙈 𝙏𝘼𝙉𝙑𝙄𝙍</div>
+        <div class="muted" style="font-size:12px">Computer Science • Web Developer</div>
+      </div>
+    </div>
+
+    <nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+      <div class="nav" id="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#education" class="nav-link">Education & Skills</a>
+        <a href="#courses" class="nav-link">Courses / Training</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME / HERO -->
+    <section id="home" class="hero" aria-labelledby="homeTitle" data-aos="fade-up">
+      <div class="hero-left">
+        <h1 id="homeTitle">Hi, I'm <strong>Rofiqul Islam Tanvir</strong></h1>
+        <p><strong>Computer Science student, basic web developer & designer. I build attractive responsive websites, teach computer basics, and help learners gain practical skills.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Hire / Contact</a>
+          <a class="btn btn-ghost" href="#portfolio">View Projects</a>
+        </div>
+
+        <div style="margin-top:16px">
+          <span class="chip">Available for Freelance</span>
+          <span style="margin-left:8px" class="muted">• Based in Dhaka, Bangladesh</span>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="zoom-in">
+ <img src="https://i.postimg.cc/Ghg5Sk2s/Gemini-Generated-Image-htxoc4htxoc4htxo.png" alt="Rofiqul Photo">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" data-aos="fade-up">
+      <h2>SAYGEN (R.T) SERVICE</h2>
+      <div class="two-col">
+        <div>
+          <p class="muted"><strong>I am Rafiqul — a computer science student and web developer. I work in web design, front-end development, and basic computer training. My goal — to make students proficient in their hands and minds.</p>
+
+          <h3 style="margin-top:12px">Quick Facts</h3>
+          <ul style="list-style:none;padding-left:0;margin-top:8px">
+            <li class="muted">🌍 Location: Dhaka, Bangladesh</li>
+            <li class="muted">🎓 Study: Computer Science</li>
+            <li class="muted">💻 Tools: VSCode, Figma, Chrome DevTools</li>
+          </ul>
+
+          <h3 style="margin-top:12px">Skills</h3>
+          <div class="list" style="margin-top:8px">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Bootstrap</span>
+            <span class="skill-pill">Responsive Design</span>
+            <span class="skill-pill">MS Office</span>
+            <span class="skill-pill">MS Excel</span>
+            <span class="skill-pill">MS Powerpoint</span>
+                <span class="skill-pill">Google From</span>
+            <span class="skill-pill">Photoshop</span>
+           <span class="skill-pill">MS Outlook</span>
+           <span class="skill-pill">MS Access</span>
+           <span class="skill-pill">MS OneNote</span>
+           <span class="skill-pill">MS Publisher</span>
+                
+          </div>
+        </div>
+
+        <div>
+          <h3>Short Bio</h3>
+          <p class="muted">I teach students computer and web development — from basics to project creation. Classes are hands-on, with practical assignments.</p>
+
+          <div style="margin-top:12px">
+            <a class="btn btn-primary" href="#courses">My Courses</a>
+            <a class="btn btn-ghost" style="margin-left:8px" href="#contact">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & SKILLS -->
+    <section id="education" data-aos="fade-up">
+      <h2>Education & Skills</h2>
+      <div class="two-col">
+        <div>
+          <div class="edu-item">
+            <strong>কম্পিউটার সায়েন্স</strong>
+            <div class="muted" style="font-size:13px"></div>
+            <p class="muted" style="margin-top:8px">Relevant coursework: Data Structures, Web Development, Database Systems.</p>
+          </div>
+
+          <div class="edu-item">
+            <strong>2023 - 2025
+            Bachelor of Science in Computer Science
+            University of Advanced Technology - Specialized in software engineering and human-computer interaction (HCI).</strong>
+            <div class="muted" style="font-size:13px"></div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Technical Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">HTML</div>
+            <div class="skill-pill">CSS</div>
+            <div class="skill-pill">JavaScript</div>
+            <div class="skill-pill">React (basics)</div>
+            <div class="skill-pill">Node.js (basics)</div>
+            <div class="skill-pill">Git & GitHub</div>
+            <div class="skill-pill">Linux basics</div>
+          </div>
+
+          <h3 style="margin-top:12px">Soft Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">Communication</div>
+            <div class="skill-pill">Problem Solving</div>
+            <div class="skill-pill">Teaching</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES / TRAINING -->
+    <section id="courses" data-aos="fade-up">
+      <h2>Courses / Training</h2>
+      <p class="muted center">Saygen R.T.Service</p>
+
+      <div class="courses-grid" style="margin-top:14px">
+        <div class="course-card">
+          <strong>Computer Basics (MS Office)</strong>
+          <div class="muted" style="font-size:13px">Duration: 4 weeks</div>
+          <p class="muted" style="margin-top:8px">Become comfortable with Windows, Word, Excel, PowerPoint.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>HTML & CSS — Website Building</strong>
+          <div class="muted" style="font-size:13px">Duration: 6 weeks</div>
+          <p class="muted" style="margin-top:8px">Responsive layouts, Flexbox, Grid, and simple projects.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Basic JavaScript</strong>
+          <div class="muted" style="font-size:13px">Duration: 5 weeks</div>
+          <p class="muted" style="margin-top:8px">DOM manipulation, events, simple project work.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Web Design Basics (Figma)</strong>
+          <div class="muted" style="font-size:13px">Duration: 3 weeks</div>
+          <p class="muted" style="margin-top:8px">UI fundamentals, prototyping, exporting assets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="portfolio" data-aos="fade-up">
+      <h2>Portfolio / Projects</h2>
+
+      <div class="portfolio-filter" id="filterBar">
+        <button class="filter-btn active" data-filter="*">All</button>
+        <button class="filter-btn" data-filter="web">Websites</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!-- sample cards -->
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p1/800/600" alt="Project 1">
+          <div class="proj-meta">
+            <strong>Simple Business Site</strong>
+            <div class="muted" style="font-size:13px">HTML • CSS • Responsive</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="design">
+          <img src="https://picsum.photos/seed/p2/800/600" alt="Project 2">
+          <div class="proj-meta">
+            <strong>UI Mockup (Figma)</strong>
+            <div class="muted" style="font-size:13px">Figma • Prototyping</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="training">
+          <img src="https://picsum.photos/seed/p3/800/600" alt="Project 3">
+          <div class="proj-meta">
+            <strong>Computer Training Session</strong>
+            <div class="muted" style="font-size:13px">MS Office • Class Materials</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p4/800/600" alt="Project 4">
+          <div class="proj-meta">
+            <strong>Portfolio Template</strong>
+            <div class="muted" style="font-size:13px">HTML • JS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" data-aos="fade-up">
+      <h2>Testimonials / Reviews</h2>
+      <div style="overflow:hidden;margin-top:12px">
+        <div class="testi-wrap" id="testiWrap">
+          <div class="testi">
+            <strong>Md. Jamal</strong>
+            <p class="muted">"রফিকুল ভাইকে ধন্যবাদ — তার ক্লাসে আমি মাইক্রোসফট ওয়ার্ডে অনেক দক্ষ হয়েছি। পরিষ্কারভাবে শেখান।"</p>
+          </div>
+          <div class="testi">
+            <strong>Shirin Akter</strong>
+            <p class="muted">"ওয়েব ডেভেলপমেন্টের জন্য খুব উপকারী প্রজেক্ট-ভিত্তিক শেখানো। দ্রুত সমস্যা সমাধান করেন।"</p>
+          </div>
+
+          <div class="testi">
+            <strong>Client (Demo)</strong>
+            <p class="muted">"প্রফেশনাল কাজ ও সময়মতো ডেলিভারি — পোর্টফোলিও ওয়েবসাইটটির জন্য ধন্যবাদ।"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="muted">প্রোজেক্ট, কোর্স বা যেকোনো প্রশ্ন জরুরি হলে অতি দ্রুত যোগাযোগ করুন  মেসেজ করো।</p>
+
+
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3>Find me</h3>
+          <div style="margin-top:10px">
+            <!-- Simple map embed (replace coords if you want) -->
+            <iframe title="location" src="https://www.google.com/maps?q=Dhaka,+Bangladesh&output=embed" style="width:100%;height:240px;border:0;border-radius:8px"></iframe>
+          </div>
+
+            <div style="margin-top:8px">
+              <a class="btn btn-ghost" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="LinkedIn" style="margin-left:8px"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Facebook" style="margin-left:8px"><i class="fa-brands fa-facebook"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Instagram" style="margin-left:8px"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      &copy; <span id="year"></span> Rofiqul Islam Tanvir — All rights reserved.
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({once:true});
+
+    // Mobile menu toggle
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('show');
+    }
+
+    // Smooth behaviour + active link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('main section, main > section, #home'));
+
+    function setActiveLink(){
+      const y = window.scrollY + (window.innerHeight/6);
+      let current = sections[0];
+      for(let s of sections){
+        if(s.offsetTop <= y) current = s;
+      }
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const id = current.id || 'home';
+      const link = document.querySelector('.nav-link[href="#'+id+'"]');
+      if(link) link.classList.add('active');
+    }
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#gallery .card');
+
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.getAttribute('data-filter');
+        cards.forEach(c=>{
+          if(f==='*' || c.getAttribute('data-category')===f) c.style.display='block';
+          else c.style.display='none';
+        });
+      });
+    });
+
+    // Simple testimonial auto-scroll
+    const testiWrap = document.getElementById('testiWrap');
+    let testiPos = 0;
+    setInterval(()=>{
+      testiPos += 1;
+      if(testiPos > testiWrap.children.length-1) testiPos = 0;
+      testiWrap.style.transform = `translateX(-${testiPos * (testiWrap.children[0].offsetWidth + 12)}px)`;
+      testiWrap.style.transition = 'transform .6s ease';
+    }, 3500);
+
+    // Contact form (basic)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim(), email=this.email.value.trim(), message=this.message.value.trim();
+      if(!name || !email || !message){ alert('অনুগ্রহ করে সমস্ত তথ্য পূরণ করুন।'); return; }
+      // For now, just simulate success.
+      alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');
+      this.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
