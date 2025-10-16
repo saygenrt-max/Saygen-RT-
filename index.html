@@ -496,4 +496,608 @@
     position: absolute;
     border-radius: 50%;
     transform: scale(0);
-    animation: ripple-animation 0.6s lin
+    animation: ripple-animation 0.6s linear;
+    background-color: rgba(0, 123, 255, 0.4); /* Primary color for ripple */
+    }
+    
+    @keyframes ripple-animation {
+    to {
+    transform: scale(4);
+    opacity: 0;
+    }
+    }
+    
+    /* Contact Form (Optional) */
+    .contact-form {
+    max-width: 500px;
+    margin: var(--spacing-xl) auto 0;
+    padding: var(--spacing-md);
+    border-radius: 15px;
+    background: var(--color-card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--color-card-border);
+    box-shadow: var(--color-shadow-soft);
+    text-align: left;
+    }
+    
+    .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--color-text-light);
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: var(--color-background-dark);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .submit-btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-1px);
+    }
+    
+    /* --- Back To Home & Footer --- */
+    
+    .back-to-home-wrapper {
+    text-align: center;
+    padding: var(--spacing-xl) 0 var(--spacing-md); /* Above the footer */
+    }
+    
+    .back-to-home-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 30px;
+    text-decoration: none;
+    color: var(--color-background-dark);
+    background-color: var(--color-text-light);
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    user-select: none;
+    }
+    
+    .back-to-home-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+    transform: translateY(-3px) scale(1.05);
+    }
+    
+    .back-to-home-btn i {
+    margin-right: 8px;
+    }
+    
+    .footer {
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Media Queries for Responsiveness (Desktop/Tablet) */
+    @media (min-width: 768px) {
+    .header-hero {
+    height: 70vh;
+    }
+    
+    .header-content h1 {
+    font-size: 4.5rem;
+    }
+    
+    .service-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+    gap: var(--spacing-lg);
+    }
+    }
+    
+    @media (min-width: 1024px) {
+    .service-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+    }
+    }
+    </style>
+    </head>
+    <body>
+    
+    <header class="header-hero" id="top">
+    <div class="banner-image-placeholder" aria-hidden="true"></div>
+    <div class="header-content">
+    <h1 data-aos="fade-down" data-aos-duration="1000">  Services By Saygen R.T </h1>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Computer Science student, basic web developer & designer. I build attractive responsive websites, teach computer basics, and help learners gain practical skills.</p>
+    </div>
+    </header>
+    
+    <section id="services" class="section-padding">
+    <div class="container">
+    <div style="text-align: center; margin-bottom: var(--spacing-xl);" 
+    data-aos="zoom-in" data-aos-duration="800">
+    <i class="fas fa-magic service-icon" style="margin: 0 10px;"></i>
+    <i class="fas fa-mobile-alt service-icon" style="margin: 0 10px;"></i>
+    <i class="fas fa-code service-icon" style="margin: 0 10px;"></i>
+    </div>
+    
+    <div class="service-grid">
+    
+    <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <i class="fas fa-drafting-compass service-icon"></i>
+    <h2 class="service-title">UI/UX Design</h2>
+    <p class="service-description">
+    Creating intuitive, accessible, and stunning user interfaces and experiences. We follow the 8pt grid system for perfect pixel alignment and use elegant typography like Inter or SF Pro Display.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    Our process includes user research, wireframing, prototyping with tools like Figma, and ensuring WCAG AA compliance. We specialize in glassmorphism and soft neumorphism aesthetics for a premium, realistic feel.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service1">Read More</button>
+    </div>
+    
+    <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
+    <i class="fas fa-laptop-code service-icon"></i>
+    <h2 class="service-title">Full-Stack Development</h2>
+    <p class="service-description">
+    Robust and scalable development using modern technologies. Focusing on mobile-first and high-performance backend architecture.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    We build responsive web applications with React, Vue, or Angular on the front-end, and Node.js, Python/Django, or Go on the back-end. All deployments are optimized for speed and security.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service2">Read More</button>
+    </div>
+    
+    <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+    <i class="fas fa-mobile-alt service-icon"></i>
+    <h2 class="service-title">Mobile App Development</h2>
+    <p class="service-description">
+    Native and cross-platform mobile application development for iOS and Android with premium UI/UX design embedded.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    Utilizing Flutter or React Native for cross-platform efficiency, or Swift/Kotlin for native performance. We ensure smooth animations, micro-interactions, and thumb-friendly layouts.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service3">Read More</button>
+    </div>
+    
+    <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
+    <i class="fas fa-cloud service-icon"></i>
+    <h2 class="service-title">Cloud & DevOps</h2>
+    <p class="service-description">
+    Seamless deployment, continuous integration, and scalable cloud infrastructure management on AWS, Azure, or GCP.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    Expertise in containerization (Docker, Kubernetes), CI/CD pipelines (GitLab, Jenkins), and infrastructure as code (Terraform). We ensure high availability and robust monitoring.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service4">Read More</button>
+    </div>
+    
+    <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
+    <i class="fas fa-tachometer-alt service-icon"></i>
+    <h2 class="service-title">Performance Optimization</h2>
+    <p class="service-description">
+    Enhancing website speed, load times, and Core Web Vitals for better SEO and user engagement.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    Advanced image optimization, code splitting, asset minification, and server-side rendering (SSR) techniques to achieve blazing-fast performance metrics.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service5">Read More</button>
+    </div>
+    
+    <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+    <i class="fas fa-palette service-icon"></i>
+    <h2 class="service-title">HD/8K Visual Assets</h2>
+    <p class="service-description">
+    Creating ultra-realistic, high-definition graphical assets and custom illustrations for a truly premium aesthetic.
+    </p>
+    <div class="full-details">
+    <p class="selectable-text">
+    Vector-based graphics, 8K-ready textures, and professional photography/videography integration to ensure every pixel is crisp and professional on high-resolution displays.
+    </p>
+    </div>
+    <button class="learn-more-btn" data-target="service6">Read More</button>
+    </div>
+    </div>
+    </div>
+    </section>
+    
+    
+    
+    <footer class="footer">
+    <div class="container">
+    &copy; <span id="current-year"></span> Powered by  Saygen R.T . All Rights Reserved. | Rofiqul Islam
+    </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+    // Global settings:
+    disable: 'mobile', // Disable animations on smaller screens if desired, but keeping them for 'ultra-premium' feel.
+    startEvent: 'DOMContentLoaded',
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 800, // values from 0 to 3000, with step 50ms
+    easing: 'ease-in-out', // default easing for AOS animations
+    once: true, // whether animation should only happen once - important for scroll reveal
+    mirror: false, // whether elements should animate out while scrolling past them
+    });
+    
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Functionality for "Read More" button to expand details in-place
+    const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
+    learnMoreButtons.forEach(button => {
+    button.addEventListener('click', function() {
+    const card = this.closest('.service-card');
+    const description = card.querySelector('.service-description');
+    const details = card.querySelector('.full-details');
+    
+    if (details.classList.contains('visible')) {
+    // Collapse
+    details.classList.remove('visible');
+    description.classList.remove('expanded');
+    this.textContent = 'Read More';
+    } else {
+    // Expand
+    details.classList.add('visible');
+    description.classList.add('expanded');
+    this.textContent = 'Read Less';
+    }
+    });
+    });
+    
+    // Ripple Effect for Social Icons
+    const socialButtons = document.querySelectorAll('.social-icon-btn');
+    socialButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    const color = this.getAttribute('data-ripple-color') || 'rgba(255, 255, 255, 0.4)';
+    
+    // Create ripple element
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.top = y + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.backgroundColor = color;
+    
+    // Append and remove after animation
+    this.appendChild(ripple);
+    setTimeout(() => {
+    ripple.remove();
+    }, 600);
+    });
+    });
+    
+    // Optional: Contact Form Validation and Submission (Placeholder)
+    const contactForm = document.getElementById('premiumContactForm');
+    if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Simple validation check
+    const name = this.querySelector('input[name="name"]').value.trim();
+    const email = this.querySelector('input[name="email"]').value.trim();
+    const message = this.querySelector('textarea[name="message"]').value.trim();
+    
+    if (!name || !email || !message) {
+    alert('Please fill out all fields. 🚫');
+    return;
+    }
+    
+    // Simple email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address. 📧');
+    return;
+    }
+    
+    // Success message simulation
+    alert('Message Sent Securely! We will be in touch soon. ✨');
+    
+    // Clear the form
+    this.reset();
+    
+    // In a real application, you would use fetch() or XMLHttpRequest here to send data to a server.
+    });
+    }
+    });
+    </script>
+    
+    </body>
+    </html>
+    
+
+    <!-- EDUCATION & SKILLS -->
+    <section id="education" data-aos="fade-up">
+      <h2>Education & Skills</h2>
+      <div class="two-col">
+        <div>
+          <div class="edu-item">
+            <strong>কম্পিউটার সায়েন্স</strong>
+            <div class="muted" style="font-size:13px"></div>
+            <p class="muted" style="margin-top:8px">Relevant coursework: Data Structures, Web Development, Database Systems.</p>
+          </div>
+
+          <div class="edu-item">
+            <strong>2023 - 2025
+            Bachelor of Science in Computer Science
+            University of Advanced Technology - Specialized in software engineering and human-computer interaction (HCI).</strong>
+            <div class="muted" style="font-size:13px"></div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Technical Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">HTML</div>
+            <div class="skill-pill">CSS</div>
+            <div class="skill-pill">JavaScript</div>
+            <div class="skill-pill">React (basics)</div>
+            <div class="skill-pill">Node.js (basics)</div>
+            <div class="skill-pill">Git & GitHub</div>
+            <div class="skill-pill">Linux basics</div>
+          </div>
+
+          <h3 style="margin-top:12px">Soft Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">Communication</div>
+            <div class="skill-pill">Problem Solving</div>
+            <div class="skill-pill">Teaching</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES / TRAINING -->
+    <section id="courses" data-aos="fade-up">
+      <h2>Courses / Training</h2>
+      <p class="muted center">Saygen R.T.Service</p>
+
+      <div class="courses-grid" style="margin-top:14px">
+        <div class="course-card">
+          <strong>Computer Basics (MS Office)</strong>
+          <div class="muted" style="font-size:13px">Duration: 4 weeks</div>
+          <p class="muted" style="margin-top:8px">Become comfortable with Windows, Word, Excel, PowerPoint.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>HTML & CSS — Website Building</strong>
+          <div class="muted" style="font-size:13px">Duration: 6 weeks</div>
+          <p class="muted" style="margin-top:8px">Responsive layouts, Flexbox, Grid, and simple projects.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Basic JavaScript</strong>
+          <div class="muted" style="font-size:13px">Duration: 5 weeks</div>
+          <p class="muted" style="margin-top:8px">DOM manipulation, events, simple project work.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Web Design Basics (Figma)</strong>
+          <div class="muted" style="font-size:13px">Duration: 3 weeks</div>
+          <p class="muted" style="margin-top:8px">UI fundamentals, prototyping, exporting assets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="portfolio" data-aos="fade-up">
+      <h2>Portfolio / Projects</h2>
+
+      <div class="portfolio-filter" id="filterBar">
+        <button class="filter-btn active" data-filter="*">All</button>
+        <button class="filter-btn" data-filter="web">Websites</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!-- sample cards -->
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p1/800/600" alt="Project 1">
+          <div class="proj-meta">
+            <strong>Simple Business Site</strong>
+            <div class="muted" style="font-size:13px">HTML • CSS • Responsive</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="design">
+          <img src="https://picsum.photos/seed/p2/800/600" alt="Project 2">
+          <div class="proj-meta">
+            <strong>UI Mockup (Figma)</strong>
+            <div class="muted" style="font-size:13px">Figma • Prototyping</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="training">
+          <img src="https://picsum.photos/seed/p3/800/600" alt="Project 3">
+          <div class="proj-meta">
+            <strong>Computer Training Session</strong>
+            <div class="muted" style="font-size:13px">MS Office • Class Materials</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p4/800/600" alt="Project 4">
+          <div class="proj-meta">
+            <strong>Portfolio Template</strong>
+            <div class="muted" style="font-size:13px">HTML • JS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" data-aos="fade-up">
+      <h2>Testimonials / Reviews</h2>
+      <div style="overflow:hidden;margin-top:12px">
+        <div class="testi-wrap" id="testiWrap">
+          <div class="testi">
+            <strong>Md. Jamal</strong>
+            <p class="muted">"রফিকুল ভাইকে ধন্যবাদ — তার ক্লাসে আমি মাইক্রোসফট ওয়ার্ডে অনেক দক্ষ হয়েছি। পরিষ্কারভাবে শেখান।"</p>
+          </div>
+          <div class="testi">
+            <strong>Shirin Akter</strong>
+            <p class="muted">"ওয়েব ডেভেলপমেন্টের জন্য খুব উপকারী প্রজেক্ট-ভিত্তিক শেখানো। দ্রুত সমস্যা সমাধান করেন।"</p>
+          </div>
+
+          <div class="testi">
+            <strong>Client (Demo)</strong>
+            <p class="muted">"প্রফেশনাল কাজ ও সময়মতো ডেলিভারি — পোর্টফোলিও ওয়েবসাইটটির জন্য ধন্যবাদ।"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="muted">প্রোজেক্ট, কোর্স বা যেকোনো প্রশ্ন জরুরি হলে অতি দ্রুত যোগাযোগ করুন  মেসেজ করো।</p>
+
+<section><div style="text-align:center;margin-top:20px">
+  <a href="https://rofiqul-islam-tanvir.netlify.app/" target="_blank" class="btn btn-primary">
+    🌐 যোগাযোগ করুন / Contact Now
+  </a>
+</div>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3>Find me</h3>
+          <div style="margin-top:10px">
+            <!-- Simple map embed (replace coords if you want) -->
+            <iframe title="location" src="https://www.google.com/maps?q=Dhaka,+Bangladesh&output=embed" style="width:100%;height:240px;border:0;border-radius:8px"></iframe>
+          </div>
+
+            <div style="margin-top:8px">
+              <a class="btn btn-ghost" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="LinkedIn" style="margin-left:8px"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Facebook" style="margin-left:8px"><i class="fa-brands fa-facebook"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Instagram" style="margin-left:8px"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      &copy; <span id="year"></span> Rofiqul Islam Tanvir — All rights reserved.Depeloper Saygen R.T
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({once:true});
+
+    // Mobile menu toggle
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('show');
+    }
+
+    // Smooth behaviour + active link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('main section, main > section, #home'));
+
+    function setActiveLink(){
+      const y = window.scrollY + (window.innerHeight/6);
+      let current = sections[0];
+      for(let s of sections){
+        if(s.offsetTop <= y) current = s;
+      }
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const id = current.id || 'home';
+      const link = document.querySelector('.nav-link[href="#'+id+'"]');
+      if(link) link.classList.add('active');
+    }
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#gallery .card');
+
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.getAttribute('data-filter');
+        cards.forEach(c=>{
+          if(f==='*' || c.getAttribute('data-category')===f) c.style.display='block';
+          else c.style.display='none';
+        });
+      });
+    });
+
+    // Simple testimonial auto-scroll
+    const testiWrap = document.getElementById('testiWrap');
+    let testiPos = 0;
+    setInterval(()=>{
+      testiPos += 1;
+      if(testiPos > testiWrap.children.length-1) testiPos = 0;
+      testiWrap.style.transform = `translateX(-${testiPos * (testiWrap.children[0].offsetWidth + 12)}px)`;
+      testiWrap.style.transition = 'transform .6s ease';
+    }, 3500);
+
+    // Contact form (basic)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim(), email=this.email.value.trim(), message=this.message.value.trim();
+      if(!name || !email || !message){ alert('অনুগ্রহ করে সমস্ত তথ্য পূরণ করুন।'); return; }
+      // For now, just simulate success.
+      alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');
+      this.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>l>e){ alert('অনুগ্রহ করে সমস্ত তথ্য পূরণ করুন।'); return; }
+      // For now, just simulate success.
+      alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');
+      this.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
