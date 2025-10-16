@@ -1,875 +1,457 @@
 <!doctype html>
 <html lang="bn">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Computer Training — Personal Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rofiqul Islam Tanvir — Personal Portfolio</title>
 
-<style>
-:root{
---accent:#00d4ff;        /* উজ্জ্বল নীল */
---accent-dark:#00a3cc;   /* ডার্ক নীল */
---bg:#121212;             /* ডার্ক ব্যাকগ্রাউন্ড */
---text:#f0f0f0;           /* হালকা টেক্সট */
---nav-height:72px;
---hero-img:url("https://picsum.photos/1200/600?blur=2");
---card-bg:#1f1f1f;        /* সেকশন ও কার্ডের ব্যাকগ্রাউন্ড */
---input-bg:#222;           /* ইনপুট ফিল্ড ব্যাকগ্রাউন্ড */
---input-border:#444;       /* ইনপুট বর্ডার */
-}
+  <!-- Fonts & Icons & AOS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-*{box-sizing:border-box}
-html,body{margin:0;font-family:"Poppins",sans-serif;color:var(--text);background:var(--bg)}
+  <meta name="description" content="Portfolio of Rofiqul Islam Tanvir — Computer Science student & web developer">
+  <meta name="author" content="Rofiqul Islam Tanvir">
 
-/* Header */
-.site-header{
-position:fixed;top:0;left:0;right:0;
-height:var(--nav-height);
-display:flex;align-items:center;justify-content:space-between;
-padding:15px 16px;
-background:rgba(18,18,18,0.95);
-backdrop-filter:blur(6px);
-z-index:50;
-}
+  <style>
+    :root{
+      --accent:#00d4ff;
+      --accent-dark:#00a3cc;
+      --bg:#0f1113;
+      --card:#16171a;
+      --muted:#bfc6cc;
+      --nav-h:72px;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:"Poppins",Inter, sans-serif;background:var(--bg);color:#eef2f3;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
 
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand img{width:90px;height:90px;border-radius:8px;object-fit:cover}
+    /* Header */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+      display:flex;align-items:center;justify-content:space-between;padding:10px 18px;
+      background:linear-gradient(180deg, rgba(15,17,19,0.9), rgba(15,17,19,0.75));
+      backdrop-filter: blur(6px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:64px;height:64px;border-radius:10px;object-fit:cover;border:3px solid var(--accent)}
+    .brand .name{font-weight:700;font-size:18px;background:linear-gradient(90deg,var(--accent),#7efcff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{color:var(--accent);padding:8px 10px;border-radius:8px;font-weight:600}
+    .nav a.active{background:linear-gradient(90deg, rgba(0,212,255,0.08), rgba(0,163,204,0.06));color:#fff}
+    .menu-btn{display:none;background:none;border:none;color:var(--accent);font-size:24px;cursor:pointer}
 
-.brand-text span:first-child {
-font-weight: 1000;
-font-size:23px;
-background: linear-gradient(45deg, #00ffff, #00d4ff, #00a3cc); 
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-size: 300% 300%;
-animation: animateText 3s ease infinite;
-}
+    @media(max-width:900px){
+      .nav{display:none;position:fixed;top:var(--nav-h);right:12px;background:rgba(8,8,9,0.98);flex-direction:column;padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+      .nav.show{display:flex}
+      .menu-btn{display:block}
+    }
 
-@keyframes animateText {
-0% {background-position: 0% 50%;}
-50% {background-position: 100% 50%;}
-100% {background-position: 0% 50%;}
-}
+    main{padding-top:calc(var(--nav-h) + 18px);max-width:1100px;margin:0 auto}
 
-.brand-text span:last-child{font-size:12px;opacity:0.8;color:var(--accent)}
+    /* Hero */
+    .hero{min-height:420px;border-radius:var(--radius);margin:18px;padding:28px;background:linear-gradient(180deg, rgba(6,10,16,0.6), rgba(10,12,14,0.6)), url('https://picsum.photos/1400/500?blur=3') center/cover no-repeat;display:flex;gap:28px;align-items:center}
+    .hero-left{flex:1;min-width:260px}
+    .hero-right{width:220px;display:flex;justify-content:center;align-items:center}
+    .hero-right img{width:200px;height:200px;border-radius:50%;object-fit:cover;border:6px solid var(--accent)}
+    .hero h1{font-size:28px;margin:0 0 10px;color:var(--accent)}
+    .hero p{color:var(--muted);line-height:1.6}
+    .hero .cta{margin-top:14px;display:flex;gap:10px}
+    .btn{padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#041017}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
-.menu-btn{
-font-size:26px;
-color:var(--accent);
-background:none;
-border:none;
-cursor:pointer;
-display:none;
-}
+    /* Sections */
+    section{margin:22px 0;padding:22px;background:var(--card);border-radius:12px;box-shadow:0 6px 30px rgba(0,0,0,0.5)}
+    section h2{color:var(--accent);margin-bottom:12px;text-align:center}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:880px){.two-col{grid-template-columns:1fr}}
 
-.nav-links{
-display:flex;
-gap:20px;
-}
-.nav-links a{
-color:var(--accent);
-text-decoration:none;
-font-weight:500;
-transition:color 0.3s;
-}
-.nav-links a:hover{color:#00ffff}
+    /* About */
+    .about .list{display:flex;gap:12px;flex-wrap:wrap}
+    .skill-pill{background:var(--glass);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
 
-@media(max-width:768px){
-.menu-btn{display:block;}
-.nav-links{
-display:none;
-flex-direction:column;
-position:absolute;
-top:var(--nav-height);
-right:0;
-background:rgba(0,0,0,0.95);
-width:220px;
-padding:15px;
-border-radius:0 0 0 10px;
-}
-.nav-links.show{display:flex;}
-.nav-links a{
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,0.1);
-}
-}
+    /* Education & Skills */
+    .edu-item{padding:12px;border-left:4px solid var(--accent);margin-bottom:12px;background:rgba(255,255,255,0.01);border-radius:8px}
+    .skills-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 
-/* Hero */
-.hero{
-margin-top:var(--nav-height);
-min-height:380px;
-background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--hero-img);
-background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;flex-direction:column;
-color:white;text-align:center;
-}
-.hero img{
-width:200px;height:200px;border-radius:50%;
-border:7px solid var(--accent);margin-bottom:30px;object-fit:cover;
-}
-.hero h1{font-size:28px;font-weight:600;margin:0;color:var(--accent)}
+    /* Courses / Training */
+    .courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .course-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
 
-/* Scrolling text */
-.marquee{
-width:100%;background:var(--accent-dark);color:white;
-padding:10px 0;overflow:hidden;white-space:nowrap;
-}
-.marquee span{display:inline-block;animation:scrollText 12s linear infinite;font-size:18px}
-@keyframes scrollText{
-from{transform:translateX(100%)}
-to{transform:translateX(-100%)}
-}
+    /* Portfolio */
+    .portfolio-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .filter-btn{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);background:transparent;cursor:pointer;color:var(--muted)}
+    .filter-btn.active{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#041017}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .gallery .card{border-radius:10px;overflow:hidden;background:rgba(0,0,0,0.25)}
+    .gallery img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .3s}
+    .gallery .card:hover img{transform:scale(1.05)}
+    .proj-meta{padding:10px}
 
-/* Sections */
-section,main{
-max-width:900px;margin:40px auto;padding:24px;
-background:var(--card-bg);border-radius:12px;
-box-shadow:0 4px 20px rgba(0,255,255,0.1);
-}
-h2{color:var(--accent);text-align:center;margin-bottom:15px}
-p{line-height:1.8;text-align:justify;color:#ccc}
-ul{list-style:none;padding:0}
-li{
-background:#222;margin:10px 0;padding:12px 18px;
-border-left:5px solid var(--accent);
-font-weight:500;border-radius:6px;color:#ddd;
-}
+    /* Testimonials */
+    .testi-wrap{display:flex;gap:12px;overflow:hidden;align-items:center}
+    .testi{min-width:280px;background:rgba(255,255,255,0.02);border-radius:10px;padding:12px}
+    .testi p{color:var(--muted);line-height:1.5}
 
-/* Gallery */
-.gallery{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;margin-top:20px;
-}
-.gallery img{
-width:100%;border-radius:8px;transition:transform 0.3s;
-filter: brightness(1.1);
-}
-.gallery img:hover{transform:scale(1.05)}
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:18px}
+    @media(max-width:1100px){.contact-grid{grid-template-columns:1fr}}
+    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:#eef2f3}
+    .contact-form button{margin-top:8px}
 
-/* Contact */
-form{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
-input,textarea{
-padding:12px;border:1px solid var(--input-border);border-radius:6px;font-size:15px;
-background:var(--input-bg);color:#eee;
-}
-button{
-padding:12px;border:none;background:var(--accent-dark);
-color:white;font-weight:600;border-radius:6px;cursor:pointer;
-transition: background 0.3s;
-}
-button:hover{background:var(--accent)}
+    /* Footer */
+    .footer{margin-top:18px;padding:12px;text-align:center;color:rgba(255,255,255,0.5)}
 
-.social-links{text-align:center;margin-top:15px;}
-.social-links a{
-text-decoration:none;margin:0 10px;
-display:inline-block;background:var(--accent-dark);
-color:white;padding:10px 16px;border-radius:6px;
-transition:background 0.3s;
-}
-.social-links a:hover{background:var(--accent);}
-
-/* Images */
-img{max-width:100%;display:block;}
-</style>
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
+    .center{text-align:center}
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-<a href="#" class="brand">
-<img src="https://i.postimg.cc/gkHjP2RF/20251015-195601.png<" alt="Logo">
-<div class="brand-text">
-<span>𝙍𝙊𝙁𝙄𝙌𝙐𝙇 𝙄𝙎𝙇𝘼𝙈 𝙏𝘼𝙉𝙑𝙄𝙍 </span>
-<span></span>
-</div>
-</a>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<nav class="nav-links" id="menu">
-<a href="about.html">About Me</a>
-<a href="experience.html">Experience</a>
-<a href="courses.html">Courses</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-
-<section class="hero">
-<img src="https://i.postimg.cc/Ghg5Sk2s/Gemini-Generated-Image-htxoc4htxoc4htxo.png" alt="My Photo">
-<h1>Hi, I'm Rofiqul Islam Tanvir! Computer Since And Basic
-Web Developer & Designer
-</h1>
-</section>
-
-<div class="marquee">
-<span>🖥️🔹 Personal Information and Experience are mentioned 🔹💻</span>
-</div>
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Our Services - Swygen IT | Ayman Hasan Shaan</title>
-<meta name="description" content="Explore the services offered by Swygen IT by Ayman Hasan Shaan. Web development, IT solutions, software development, and Swygen Developer expert services.">
-  <meta name="keywords" content="Swygen, Swygen IT, Ayman Hasan Shaan, Swygen Developer, web development, IT services">
-  <meta name="author" content="Ayman Hasan Shaan">
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Swygen IT - Ayman Hasan Shaan">
-  <meta property="og:description" content="Professional IT and web development services by Swygen IT.">
-  <meta property="og:url" content="https://swygen-it.free.nf">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://swygen-it.free.nf/og-image.jpg">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Swygen IT - Ayman Hasan Shaan">
-  <meta name="twitter:description" content="Professional IT and web development services by Swygen IT.">
-  <meta name="twitter:image" content="https://swygen-it.free.nf/og-image.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJd/rB9bA9N5/H7A/x3K0Qy+P8Wf7r68tI3N3Gf3fI/v5Z5Q1WqX3oK5H9x+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    
-    <style>
-        /* CSS Reset and Mobile-First Base */
-        :root {
-            /* 8pt Grid System Variables */
-            --spacing-xs: 8px;
-            --spacing-sm: 12px;
-            --spacing-md: 24px; /* Base 24px spacing */
-            --spacing-lg: 32px;
-            --spacing-xl: 48px;
-
-            /* Colors (Professional, Modern Aesthetic, WCAG AA Compliant) */
-            --color-primary: #007bff; /* Blue */
-            --color-secondary: #00c1ff; /* Light Blue/Cyan */
-            --color-background-dark: #121212; /* Dark Gray for ultra-premium look */
-            --color-background-light: #f0f0f0; /* Soft light background for contrast */
-            --color-text-light: #e0e0e0; /* Light text on dark background */
-            --color-text-dark: #1e1e1e; /* Dark text on light background */
-            --color-card-bg: rgba(255, 255, 255, 0.08); /* Glassmorphism Base (Dark) */
-            --color-card-border: rgba(255, 255, 255, 0.1);
-            --color-shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for glassmorphism */
-            --color-neumorphism-bg: #212121;
-        }
-
-        /* Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            /* Disable text selection triggering search/highlight issues */
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* IE/Edge */
-            user-select: none; /* Standard */
-        }
-        
-        /* Text is safe: allow selection only on specific text areas if needed, but safe by default */
-        .selectable-text {
-            user-select: text;
-            -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-        }
-
-        html {
-            scroll-behavior: smooth; /* Smooth scroll */
-            font-size: 16px; /* Base font size */
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-background-dark);
-            color: var(--color-text-light);
-            line-height: 1.6;
-            overflow-x: hidden; /* No horizontal scroll */
-        }
-
-        /* Utility Classes */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: var(--spacing-md);
-            padding-right: var(--spacing-md);
-        }
-
-        .section-padding {
-            padding-top: var(--spacing-xl);
-            padding-bottom: var(--spacing-xl);
-        }
-
-        /* Header / Hero Section (Banner Image) */
-        .header-hero {
-            position: relative;
-            height: 60vh; /* Adjust height for mobile screens */
-            min-height: 300px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: var(--spacing-md);
-            background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
-            z-index: 1; /* Ensure text is above banner */
-        }
-
-        .banner-image-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('path/to/your/hd/banner-image.jpg') no-repeat center center/cover; /* Placeholder for user */
-            opacity: 0.3; /* Subtle effect */
-            filter: blur(5px);
-            transition: opacity 0.5s ease;
-            z-index: -1;
-        }
-
-        .header-content h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--color-secondary);
-            text-shadow: 0 0 10px rgba(0, 193, 255, 0.5);
-            margin-bottom: var(--spacing-sm);
-            /* Smooth entrance animation (AOS on element) */
-        }
-
-        .header-content p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--color-text-light);
-            /* Smooth entrance animation (AOS on element) */
-        }
-
-        /* --- Service Content Sections Styling --- */
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Single column for mobile */
-            gap: var(--spacing-md);
-            padding-top: var(--spacing-md);
-        }
-
-        /* Glassmorphism/Neumorphism Service Card */
-        .service-card {
-            background: var(--color-card-bg); /* Glassmorphism background */
-            backdrop-filter: blur(10px); /* Glass effect */
-            border: 1px solid var(--color-card-border);
-            border-radius: 20px;
-            padding: var(--spacing-md);
-            box-shadow: var(--color-shadow-soft); /* Soft shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            /* Neumorphism-style soft inset for contrast */
-            box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(255,255,255,0.05),
-                        0 10px 30px rgba(0, 0, 0, 0.5); /* Outer soft shadow */
-        }
-
-        /* Hover Effect & Micro-Interaction */
-        .service-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 123, 255, 0.4); /* Primary color glow on hover */
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--color-secondary);
-            margin-bottom: var(--spacing-sm);
-            text-shadow: 0 0 5px var(--color-secondary);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-primary);
-        }
-
-        .service-description {
-            font-size: 1rem;
-            color: var(--color-text-light);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.4;
-            max-height: 5em; /* Limit height for short description */
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
-
-        .service-description.expanded {
-            max-height: 500px; /* Expand height to show full details */
-        }
-
-        /* Learn More Button - Subtle Neumorphism */
-        .learn-more-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 12px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background-color: var(--color-neumorphism-bg);
-            color: var(--color-secondary);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -5px -5px 10px rgba(255, 255, 255, 0.05);
-            user-select: none; /* Thumb-friendly, no accidental selection */
-        }
-
-        /* Button Hover and Active (Micro-Interactions) */
-        .learn-more-btn:hover {
-            color: var(--color-primary);
-            box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.6), -7px -7px 14px rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .learn-more-btn:active {
-            box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.6), inset -3px -3px 7px rgba(255, 255, 255, 0.05); /* Pressed state */
-            transform: scale(0.98);
-        }
-
-        /* Expanded Details Section */
-        .full-details {
-            margin-top: var(--spacing-md);
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
-            opacity: 0;
-        }
-
-        .full-details.visible {
-            max-height: 500px; /* Enough for full details */
-            opacity: 1;
-        }
-
-        /* --- Contact / Social Section Styling --- */
-
-        .contact-section {
-            text-align: center;
-        }
-
-        .social-icons-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-            list-style: none;
-        }
-
-        /* Social Icon Button - Modern Neumorphism Style with Ripple */
-        .social-icon-btn {
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: var(--color-neumorphism-bg);
-            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6), -8px -8px 16px rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: var(--color-text-light);
-            font-size: 1.5rem;
-        }
-
-        .social-icon-btn:hover {
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8), -10px -10px 20px rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-            color: var(--color-secondary);
-        }
-
-        .social-icon-btn:active {
-            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -4px -4px 8px rgba(255, 255, 255, 0.05);
-            transform: scale(0.95);
-        }
-
-        /* Ripple Effect Base */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple-animation 0.6s linear;
-            background-color: rgba(0, 123, 255, 0.4); /* Primary color for ripple */
-        }
-
-        @keyframes ripple-animation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
-        /* Contact Form (Optional) */
-        .contact-form {
-            max-width: 500px;
-            margin: var(--spacing-xl) auto 0;
-            padding: var(--spacing-md);
-            border-radius: 15px;
-            background: var(--color-card-bg);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--color-card-border);
-            box-shadow: var(--color-shadow-soft);
-            text-align: left;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: var(--spacing-md);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.3);
-            color: var(--color-text-light);
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.3s ease, background 0.3s ease;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--color-primary);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--color-primary);
-            color: var(--color-background-dark);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--color-secondary);
-            transform: translateY(-1px);
-        }
-
-        /* --- Back To Home & Footer --- */
-
-        .back-to-home-wrapper {
-            text-align: center;
-            padding: var(--spacing-xl) 0 var(--spacing-md); /* Above the footer */
-        }
-
-        .back-to-home-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 30px;
-            text-decoration: none;
-            color: var(--color-background-dark);
-            background-color: var(--color-text-light);
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            user-select: none;
-        }
-
-        .back-to-home-btn:hover {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
-            transform: translateY(-3px) scale(1.05);
-        }
-
-        .back-to-home-btn i {
-            margin-right: 8px;
-        }
-
-        .footer {
-            padding: var(--spacing-md) 0;
-            text-align: center;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Media Queries for Responsiveness (Desktop/Tablet) */
-        @media (min-width: 768px) {
-            .header-hero {
-                height: 70vh;
-            }
-
-            .header-content h1 {
-                font-size: 4.5rem;
-            }
-
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
-                gap: var(--spacing-lg);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .service-grid {
-                grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header-hero" id="top">
-        <div class="banner-image-placeholder" aria-hidden="true"></div>
-        <div class="header-content">
-            <h1 data-aos="fade-down" data-aos-duration="1000">  Saygen (R.T) Service</h1>
-            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Ultra-modern solutions crafted for the digital age.</p>
-        </div>
-    </header>
-
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: var(--spacing-xl);" 
-                 data-aos="zoom-in" data-aos-duration="800">
-                <i class="fas fa-magic service-icon" style="margin: 0 10px;"></i>
-                <i class="fas fa-mobile-alt service-icon" style="margin: 0 10px;"></i>
-                <i class="fas fa-code service-icon" style="margin: 0 10px;"></i>
-            </div>
-
-            <div class="service-grid">
-
-                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    <i class="fas fa-drafting-compass service-icon"></i>
-                    <h2 class="service-title">UI/UX Design</h2>
-                    <p class="service-description">
-                        Creating intuitive, accessible, and stunning user interfaces and experiences. We follow the 8pt grid system for perfect pixel alignment and use elegant typography like Inter or SF Pro Display.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            Our process includes user research, wireframing, prototyping with tools like Figma, and ensuring WCAG AA compliance. We specialize in glassmorphism and soft neumorphism aesthetics for a premium, realistic feel.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service1">Read More</button>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
-                    <i class="fas fa-laptop-code service-icon"></i>
-                    <h2 class="service-title">Full-Stack Development</h2>
-                    <p class="service-description">
-                        Robust and scalable development using modern technologies. Focusing on mobile-first and high-performance backend architecture.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            We build responsive web applications with React, Vue, or Angular on the front-end, and Node.js, Python/Django, or Go on the back-end. All deployments are optimized for speed and security.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service2">Read More</button>
-                </div>
-
-                <div class="service-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
-                    <i class="fas fa-mobile-alt service-icon"></i>
-                    <h2 class="service-title">Mobile App Development</h2>
-                    <p class="service-description">
-                        Native and cross-platform mobile application development for iOS and Android with premium UI/UX design embedded.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            Utilizing Flutter or React Native for cross-platform efficiency, or Swift/Kotlin for native performance. We ensure smooth animations, micro-interactions, and thumb-friendly layouts.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service3">Read More</button>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true">
-                    <i class="fas fa-cloud service-icon"></i>
-                    <h2 class="service-title">Cloud & DevOps</h2>
-                    <p class="service-description">
-                        Seamless deployment, continuous integration, and scalable cloud infrastructure management on AWS, Azure, or GCP.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            Expertise in containerization (Docker, Kubernetes), CI/CD pipelines (GitLab, Jenkins), and infrastructure as code (Terraform). We ensure high availability and robust monitoring.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service4">Read More</button>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
-                    <i class="fas fa-tachometer-alt service-icon"></i>
-                    <h2 class="service-title">Performance Optimization</h2>
-                    <p class="service-description">
-                        Enhancing website speed, load times, and Core Web Vitals for better SEO and user engagement.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            Advanced image optimization, code splitting, asset minification, and server-side rendering (SSR) techniques to achieve blazing-fast performance metrics.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service5">Read More</button>
-                </div>
-
-                <div class="service-card" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
-                    <i class="fas fa-palette service-icon"></i>
-                    <h2 class="service-title">HD/8K Visual Assets</h2>
-                    <p class="service-description">
-                        Creating ultra-realistic, high-definition graphical assets and custom illustrations for a truly premium aesthetic.
-                    </p>
-                    <div class="full-details">
-                        <p class="selectable-text">
-                            Vector-based graphics, 8K-ready textures, and professional photography/videography integration to ensure every pixel is crisp and professional on high-resolution displays.
-                        </p>
-                    </div>
-                    <button class="learn-more-btn" data-target="service6">Read More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding contact-section" 
-             data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500">
-        <div class="container">
-            <h2 style="font-size: 2rem; font-weight: 700;">Get In Touch</h2>
-            <p style="margin-top: var(--spacing-sm);">Connect with us through our beautiful social channels.</p>
-
-
-            <form class="contact-form" id="premiumContactForm" data-aos="slide-up" data-aos-duration="1000" data-aos-delay="800">
-                <h3 style="font-size: 1.5rem; margin-bottom: var(--spacing-md); color: var(--color-primary);">Send a Message</h3>
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-                <textarea name="message" rows="4" placeholder="Your Message" required aria-label="Your Message"></textarea>
-                <button type="submit" class="submit-btn">Send Securely</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="back-to-home-wrapper">
-        <a href="index.html" class="back-to-home-btn" aria-label="Back to Home Page">
-            <i class="fas fa-home"></i> Back To Home
-        </a>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="brand" aria-label="Brand">
+      <img src="https://i.postimg.cc/gkHjP2RF/20251015-195601.png" alt="Logo of R.T">
+      <div>
+        <div class="name">𝙍𝙊𝙁𝙄𝙌𝙐𝙇 𝙄𝙎𝙇𝘼𝙈 𝙏𝘼𝙉𝙑𝙄𝙍</div>
+        <div class="muted" style="font-size:12px">Computer Science • Web Developer</div>
+      </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            &copy; <span id="current-year"></span> Powered by  Swygen IT . All Rights Reserved. | Crafted with UI/UX Excellence By Ayman Hasan Shaan 
+    <nav>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+      <div class="nav" id="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#education" class="nav-link">Education & Skills</a>
+        <a href="#courses" class="nav-link">Courses / Training</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME / HERO -->
+    <section id="home" class="hero" aria-labelledby="homeTitle" data-aos="fade-up">
+      <div class="hero-left">
+        <h1 id="homeTitle">Hi, I'm <strong>Rofiqul Islam Tanvir</strong></h1>
+        <p>Computer Science student, basic web developer & designer. I build attractive responsive websites, teach computer basics, and help learners gain practical skills.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Hire / Contact</a>
+          <a class="btn btn-ghost" href="#portfolio">View Projects</a>
         </div>
-    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS (Animate On Scroll)
-            AOS.init({
-                // Global settings:
-                disable: 'mobile', // Disable animations on smaller screens if desired, but keeping them for 'ultra-premium' feel.
-                startEvent: 'DOMContentLoaded',
-                offset: 120, // offset (in px) from the original trigger point
-                delay: 0, // values from 0 to 3000, with step 50ms
-                duration: 800, // values from 0 to 3000, with step 50ms
-                easing: 'ease-in-out', // default easing for AOS animations
-                once: true, // whether animation should only happen once - important for scroll reveal
-                mirror: false, // whether elements should animate out while scrolling past them
-            });
+        <div style="margin-top:16px">
+          <span class="chip">Available for Freelance</span>
+          <span style="margin-left:8px" class="muted">• Based in Dhaka, Bangladesh</span>
+        </div>
+      </div>
 
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+      <div class="hero-right" data-aos="zoom-in">
+        <img src="https://i.postimg.cc/Ghg5Sk2s/Gemini-Generated-Image-htxoc4htxoc4htxo.png" alt="Rofiqul Photo">
+      </div>
+    </section>
 
-            // Functionality for "Read More" button to expand details in-place
-            const learnMoreButtons = document.querySelectorAll('.learn-more-btn');
-            learnMoreButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const card = this.closest('.service-card');
-                    const description = card.querySelector('.service-description');
-                    const details = card.querySelector('.full-details');
+    <!-- ABOUT -->
+    <section id="about" class="about" data-aos="fade-up">
+      <h2>About Me</h2>
+      <div class="two-col">
+        <div>
+          <p class="muted">আমি রফিকুল — কম্পিউটার সায়েন্স ছাত্র এবং ওয়েব ডেভেলপার। আমি ওয়েব ডিজাইন, ফ্রন্ট-এন্ড ডেভেলপমেন্ট এবং বেসিক কম্পিউটার ট্রেনিংয়ে কাজ করি। আমার লক্ষ্য — শিক্ষার্থীকে হাতে কলমে দক্ষ করে তোলা।</p>
 
-                    if (details.classList.contains('visible')) {
-                        // Collapse
-                        details.classList.remove('visible');
-                        description.classList.remove('expanded');
-                        this.textContent = 'Read More';
-                    } else {
-                        // Expand
-                        details.classList.add('visible');
-                        description.classList.add('expanded');
-                        this.textContent = 'Read Less';
-                    }
-                });
-            });
+          <h3 style="margin-top:12px">Quick Facts</h3>
+          <ul style="list-style:none;padding-left:0;margin-top:8px">
+            <li class="muted">📍 Location: Dhaka, Bangladesh</li>
+            <li class="muted">🎓 Study: Computer Science</li>
+            <li class="muted">💻 Tools: VSCode, Figma, Chrome DevTools</li>
+          </ul>
 
-            // Ripple Effect for Social Icons
-            const socialButtons = document.querySelectorAll('.social-icon-btn');
-            socialButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    const color = this.getAttribute('data-ripple-color') || 'rgba(255, 255, 255, 0.4)';
+          <h3 style="margin-top:12px">Skills</h3>
+          <div class="list" style="margin-top:8px">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">Bootstrap</span>
+            <span class="skill-pill">Responsive Design</span>
+            <span class="skill-pill">MS Office</span>
+            <span class="skill-pill">Photoshop (basic)</span>
+          </div>
+        </div>
 
-                    // Create ripple element
-                    const ripple = document.createElement('span');
-                    ripple.classList.add('ripple');
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.top = y + 'px';
-                    ripple.style.left = x + 'px';
-                    ripple.style.backgroundColor = color;
+        <div>
+          <h3>Short Bio</h3>
+          <p class="muted">আমি শিক্ষার্থীদের কম্পিউটার এবং ওয়েব ডেভেলপমেন্ট শেখাই — বেসিক থেকে শুরু করে প্রজেক্ট বানানো পর্যন্ত। ক্লাসগুলো হাতে কলমে, প্র‌্যাকটিক্যাল অ্যাসাইনমেন্টসহ।</p>
 
-                    // Append and remove after animation
-                    this.appendChild(ripple);
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 600);
-                });
-            });
+          <div style="margin-top:12px">
+            <a class="btn btn-primary" href="#courses">My Courses</a>
+            <a class="btn btn-ghost" style="margin-left:8px" href="#contact">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            // Optional: Contact Form Validation and Submission (Placeholder)
-            const contactForm = document.getElementById('premiumContactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Simple validation check
-                    const name = this.querySelector('input[name="name"]').value.trim();
-                    const email = this.querySelector('input[name="email"]').value.trim();
-                    const message = this.querySelector('textarea[name="message"]').value.trim();
+    <!-- EDUCATION & SKILLS -->
+    <section id="education" data-aos="fade-up">
+      <h2>Education & Skills</h2>
+      <div class="two-col">
+        <div>
+          <div class="edu-item">
+            <strong>বিএসসি ইন কম্পিউটার সায়েন্স</strong>
+            <div class="muted" style="font-size:13px">XYZ বিশ্ববিদ্যালয় — ২০২৩ (অন্তর্ভুক্ত)</div>
+            <p class="muted" style="margin-top:8px">Relevant coursework: Data Structures, Web Development, Database Systems.</p>
+          </div>
 
-                    if (!name || !email || !message) {
-                        alert('Please fill out all fields. 🚫');
-                        return;
-                    }
+          <div class="edu-item">
+            <strong>Higher Secondary (Science)</strong>
+            <div class="muted" style="font-size:13px">ABC College — ২০১৯</div>
+          </div>
+        </div>
 
-                    // Simple email format check
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        alert('Please enter a valid email address. 📧');
-                        return;
-                    }
+        <div>
+          <h3>Technical Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">HTML</div>
+            <div class="skill-pill">CSS</div>
+            <div class="skill-pill">JavaScript</div>
+            <div class="skill-pill">React (basics)</div>
+            <div class="skill-pill">Node.js (basics)</div>
+            <div class="skill-pill">Git & GitHub</div>
+            <div class="skill-pill">Linux basics</div>
+          </div>
 
-                    // Success message simulation
-                    alert('Message Sent Securely! We will be in touch soon. ✨');
+          <h3 style="margin-top:12px">Soft Skills</h3>
+          <div class="skills-grid" style="margin-top:8px">
+            <div class="skill-pill">Communication</div>
+            <div class="skill-pill">Problem Solving</div>
+            <div class="skill-pill">Teaching</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    // Clear the form
-                    this.reset();
+    <!-- COURSES / TRAINING -->
+    <section id="courses" data-aos="fade-up">
+      <h2>Courses / Training</h2>
+      <p class="muted center">আমি ব্যক্তিগতভাবে নিম্নলিখিত কোর্সগুলো দিয়ে থাকি — ক্লাস অন-সাইট বা অনলাইন উভয়ভাবেই।</p>
 
-                    // In a real application, you would use fetch() or XMLHttpRequest here to send data to a server.
-                });
-            }
+      <div class="courses-grid" style="margin-top:14px">
+        <div class="course-card">
+          <strong>Computer Basics (MS Office)</strong>
+          <div class="muted" style="font-size:13px">Duration: 4 weeks</div>
+          <p class="muted" style="margin-top:8px">Become comfortable with Windows, Word, Excel, PowerPoint.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>HTML & CSS — Website Building</strong>
+          <div class="muted" style="font-size:13px">Duration: 6 weeks</div>
+          <p class="muted" style="margin-top:8px">Responsive layouts, Flexbox, Grid, and simple projects.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Basic JavaScript</strong>
+          <div class="muted" style="font-size:13px">Duration: 5 weeks</div>
+          <p class="muted" style="margin-top:8px">DOM manipulation, events, simple project work.</p>
+        </div>
+
+        <div class="course-card">
+          <strong>Web Design Basics (Figma)</strong>
+          <div class="muted" style="font-size:13px">Duration: 3 weeks</div>
+          <p class="muted" style="margin-top:8px">UI fundamentals, prototyping, exporting assets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / PROJECTS -->
+    <section id="portfolio" data-aos="fade-up">
+      <h2>Portfolio / Projects</h2>
+
+      <div class="portfolio-filter" id="filterBar">
+        <button class="filter-btn active" data-filter="*">All</button>
+        <button class="filter-btn" data-filter="web">Websites</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <!-- sample cards -->
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p1/800/600" alt="Project 1">
+          <div class="proj-meta">
+            <strong>Simple Business Site</strong>
+            <div class="muted" style="font-size:13px">HTML • CSS • Responsive</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="design">
+          <img src="https://picsum.photos/seed/p2/800/600" alt="Project 2">
+          <div class="proj-meta">
+            <strong>UI Mockup (Figma)</strong>
+            <div class="muted" style="font-size:13px">Figma • Prototyping</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="training">
+          <img src="https://picsum.photos/seed/p3/800/600" alt="Project 3">
+          <div class="proj-meta">
+            <strong>Computer Training Session</strong>
+            <div class="muted" style="font-size:13px">MS Office • Class Materials</div>
+          </div>
+        </div>
+
+        <div class="card" data-category="web">
+          <img src="https://picsum.photos/seed/p4/800/600" alt="Project 4">
+          <div class="proj-meta">
+            <strong>Portfolio Template</strong>
+            <div class="muted" style="font-size:13px">HTML • JS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" data-aos="fade-up">
+      <h2>Testimonials / Reviews</h2>
+      <div style="overflow:hidden;margin-top:12px">
+        <div class="testi-wrap" id="testiWrap">
+          <div class="testi">
+            <strong>Md. Jamal</strong>
+            <p class="muted">"রফিকুল ভাইকে ধন্যবাদ — তার ক্লাসে আমি মাইক্রোসফট ওয়ার্ডে অনেক দক্ষ হয়েছি। পরিষ্কারভাবে শেখান।"</p>
+          </div>
+
+          <div class="testi">
+            <strong>Shirin Akter</strong>
+            <p class="muted">"ওয়েব ডেভেলপমেন্টের জন্য খুব উপকারী প্রজেক্ট-ভিত্তিক শেখানো। দ্রুত সমস্যা সমাধান করেন।"</p>
+          </div>
+
+          <div class="testi">
+            <strong>Client (Demo)</strong>
+            <p class="muted">"প্রফেশনাল কাজ ও সময়মতো ডেলিভারি — পোর্টফোলিও ওয়েবসাইটটির জন্য ধন্যবাদ।"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="muted">প্রোজেক্ট, কোর্স বা যেকোনো প্রশ্নের জন্য নিচের ফর্মটি পাঠিয়ে দিতে পারো। জরুরি হলে WhatsApp-এ সরাসরি মেসেজ করো।</p>
+
+          <form id="contactForm" class="contact-form" aria-label="Contact form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div style="margin-top:8px">
+              <a class="btn btn-ghost" href="mailto:youremail@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
+              <a class="btn btn-ghost" style="margin-left:8px" href="https://wa.me/8801XXXXXXXXX" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h3>Find me</h3>
+          <div style="margin-top:10px">
+            <!-- Simple map embed (replace coords if you want) -->
+            <iframe title="location" src="https://www.google.com/maps?q=Dhaka,+Bangladesh&output=embed" style="width:100%;height:240px;border:0;border-radius:8px"></iframe>
+          </div>
+
+          <div style="margin-top:12px">
+            <p class="muted"><strong>Email:</strong> youremail@example.com</p>
+            <p class="muted"><strong>Phone:</strong> +8801XXXXXXXXX</p>
+
+            <div style="margin-top:8px">
+              <a class="btn btn-ghost" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="LinkedIn" style="margin-left:8px"><i class="fa-brands fa-linkedin"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Facebook" style="margin-left:8px"><i class="fa-brands fa-facebook"></i></a>
+              <a class="btn btn-ghost" href="#" aria-label="Instagram" style="margin-left:8px"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      &copy; <span id="year"></span> Rofiqul Islam Tanvir — All rights reserved.
+    </div>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({once:true});
+
+    // Mobile menu toggle
+    function toggleMenu(){
+      document.getElementById('nav').classList.toggle('show');
+    }
+
+    // Smooth behaviour + active link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('main section, main > section, #home'));
+
+    function setActiveLink(){
+      const y = window.scrollY + (window.innerHeight/6);
+      let current = sections[0];
+      for(let s of sections){
+        if(s.offsetTop <= y) current = s;
+      }
+      navLinks.forEach(a=>a.classList.remove('active'));
+      const id = current.id || 'home';
+      const link = document.querySelector('.nav-link[href="#'+id+'"]');
+      if(link) link.classList.add('active');
+    }
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#gallery .card');
+
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.getAttribute('data-filter');
+        cards.forEach(c=>{
+          if(f==='*' || c.getAttribute('data-category')===f) c.style.display='block';
+          else c.style.display='none';
         });
-    </script>
+      });
+    });
 
+    // Simple testimonial auto-scroll
+    const testiWrap = document.getElementById('testiWrap');
+    let testiPos = 0;
+    setInterval(()=>{
+      testiPos += 1;
+      if(testiPos > testiWrap.children.length-1) testiPos = 0;
+      testiWrap.style.transform = `translateX(-${testiPos * (testiWrap.children[0].offsetWidth + 12)}px)`;
+      testiWrap.style.transition = 'transform .6s ease';
+    }, 3500);
+
+    // Contact form (basic)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim(), email=this.email.value.trim(), message=this.message.value.trim();
+      if(!name || !email || !message){ alert('অনুগ্রহ করে সমস্ত তথ্য পূরণ করুন।'); return; }
+      // For now, just simulate success.
+      alert('ধন্যবাদ! আপনার মেসেজ পাঠানো হয়েছে।');
+      this.reset();
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
