@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swyggen Official</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(145deg, #0d0d0d, #1c1c1c, #101010);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.7);
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .logo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #ffcc00;
+      animation: zoomIn 1s ease forwards;
+    }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffcc00;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+    .title img {
+      width: 30px;
+      height: 30px;
+    }
+    .bio {
+      font-size: 14px;
+      color: #b3b3b3;
+      margin-bottom: 18px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+    .followers {
+      font-size: 18px;
+      margin: 12px 0;
+      color: #ccc;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.9s;
+    }
+    .followers span {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+    .follow-btn {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.2s;
+    }
+    .follow-btn:hover {
+      background: #ffdb4d;
+      transform: scale(1.05);
+    }
+    .follow-btn.following {
+      background: #4CAF50;
+      color: white;
+    }
+    .links {
+      margin-top: 25px;
+      display: grid;
+      gap: 14px;
+    }
+    .link-btn {
+      background: #2a2a2a;
+      padding: 14px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .link-btn:hover {
+      background: #383838;
+      transform: translateY(-3px) scale(1.03);
+    }
+    .link-btn i, .link-btn img {
+      font-size: 22px;
+    }
+    .link-btn img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+    .footer a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes zoomIn {
+      from {opacity: 0; transform: scale(0.5);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://i.postimg.cc/HxDkwqYK/Gemini-Generated-Image-htxoc4htxoc4htxo.png" alt="Logo" class="logo">
+
+    <!-- নাম + Verify Logo -->
+    <div class="title">
+      ʀᴏꜰɪQᴜʟ ɪꜱʟᴀᴍ ᴛᴀɴʙɪʀ 
+      <img src="https://i.postimg.cc/439BczpR/approve-11648438.png" alt="Verified">
+    </div>
+
+    <div class="bio">Saygen ʀ.ᴛ ᴄᴏᴍᴘᴜᴛᴇʀ ꜱᴇʀᴠɪᴄᴇ  ᴀʟʟ ᴋɪɴᴅꜱ ᴏꜰ ᴄᴏᴍᴘᴜᴛᴇʀ ꜱᴇʀᴠɪᴄᴇꜱ ɪɴ ᴏɴᴇ ᴘʟᴀᴄᴇ 💻✨</div>
+
+    <div class="followers">Followers: <span id="followerCount">1200</span></div>
+    <button id="followBtn" class="follow-btn">FOLLOW</button>
+
+    <div class="links">
+      <a href="https://t.me/saygent" target="_blank" class="link-btn" style="animation: fadeIn 0.8s ease forwards; animation-delay: 1.5s;">
+        Telegram <i class="fab fa-telegram"></i>
+      </a>
+      <a href="https://wa.me/message/K5BOFZ2BQS47O1" target="_blank" class="link-btn" style="animation: fadeIn 0.8s ease forwards; animation-delay: 1.8s;">
+        WhatsApp <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://m.me/rofiqul.islam.tanbir.2025?source=qr_link_share" target="_blank" class="link-btn" style="animation: fadeIn 0.8s ease forwards; animation-delay: 2.1s;">
+        Message <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.facebook.com/share/19cDQbanqu/" target="_blank" class="link-btn" style="animation: fadeIn 0.8s ease forwards; animation-delay: 2.4s;">
+        Facebook <i class="fab fa-facebook"></i>
+      </a>
+      
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ <a href="">SAYGEN R.T/Contract : 01304242538,01623108588 </a>
+    </div>
+  </div>
+
+
+  <script>
+    const followBtn = document.getElementById("followBtn");
+    const followerCount = document.getElementById("followerCount");
+
+    let isFollowing = localStorage.getItem("isFollowing") === "true";
+    let followers = parseInt(localStorage.getItem("followers")) || 1200;
+    let lastUpdate = parseInt(localStorage.getItem("lastUpdate")) || Date.now();
+
+    // প্রতি ঘন্টায় followers 2 করে বাড়বে
+    function autoIncrease() {
+      let now = Date.now();
+      let hoursPassed = Math.floor((now - lastUpdate) / (1000 * 60 * 60));
+      if (hoursPassed >= 1) {
+        let increase = hoursPassed * 2;
+        followers += increase;
+        lastUpdate = now;
+        saveData();
+      }
+    }
+
+    // followers সংখ্যা count-up effect
+    function animateCount(target) {
+      let start = parseInt(followerCount.textContent);
+      let duration = 1000;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        let progress = Math.min((timestamp - startTime) / duration, 1);
+        let current = Math.floor(progress * (target - start) + start);
+        followerCount.textContent = current;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    function updateUI() {
+      animateCount(followers);
+      if (isFollowing) {
+        followBtn.textContent = "FOLLOWING";
+        followBtn.classList.add("following");
+      } else {
+        followBtn.textContent = "FOLLOW";
+        followBtn.classList.remove("following");
+      }
+    }
+
+    function saveData() {
+      localStorage.setItem("followers", followers);
+      localStorage.setItem("isFollowing", isFollowing);
+      localStorage.setItem("lastUpdate", lastUpdate);
+    }
+
+    followBtn.addEventListener("click", () => {
+      if (!isFollowing) {
+        followers++;
+        isFollowing = true;
+      } else {
+        followers--;
+        isFollowing = false;
+      }
+      lastUpdate = Date.now();
+      saveData();
+      updateUI();
+    });
+
+    // শুরুতে রান
+    autoIncrease();
+    updateUI();
+  </script>
+
+</body>
+</html>
